@@ -1,8 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap");
+
+:root {
+  --sage: rgb(156, 175, 136);      /* your original background */
+  --sage-deep: #5f7350;            /* borders, accents */
+  --sage-dark: #2f3d2a;            /* body text */
+  --sage-mist: #eef2e8;            /* card background */
+  --sage-tint: #dfe7d5;            /* table header, hover */
+  --navy: rgb(0, 51, 128);         /* your original heading color */
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: rgb(156, 175, 136);
+  background-color: var(--sage);
+  color: var(--sage-dark);
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
 }
 
 h1 {
-  color: rgb(0, 51, 128);
-  margin-left: 20px;
+  color: var(--navy);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0 0 1.75rem;
+  padding-left: 1.25rem;
+  border-left: 6px solid var(--navy);
+}
+
+h2 {
+  color: var(--sage-dark);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.4rem;
+  margin: 0 0 0.75rem;
+}
+
+.section {
+  background-color: var(--sage-mist);
+  border-left: 6px solid var(--sage-deep);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 2px 8px rgba(47, 61, 42, 0.15);
+}
+
+.section p {
+  margin: 0;
+}
+
+.section ul,
+.section ol {
+  margin: 0.5rem 0 0;
+  padding-left: 1.4rem;
+}
+
+.section li {
+  margin-bottom: 0.25rem;
+}
+
+.section li::marker {
+  color: var(--sage-deep);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+}
+
+th {
+  background-color: var(--sage-deep);
+  color: #fff;
+  font-weight: 700;
+}
+
+td {
+  border-top: 1px solid var(--sage-tint);
+}
+
+tr:nth-child(even) td {
+  background-color: var(--sage-mist);
+}
+
+a {
+  color: var(--navy);
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--sage-deep);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 1rem;
+  }
+
+  h1 {
+    padding-left: 0.9rem;
+  }
 }
